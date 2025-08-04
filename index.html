@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tool Tài Xỉu - Tỷ Lệ Thắng</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #27ae60;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #34495e;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tool Tài Xỉu</h1>
+  <p>Bấm nút bên dưới để dự đoán kết quả:</p>
+  <button onclick="predict()">Dự đoán</button>
+  <div id="result"></div>
+
+  <script>
+    function predict() {
+      const ketQua = Math.random() < 0.5 ? "Tài" : "Xỉu";
+      const tile = (Math.random() * 20 + 70).toFixed(2); // ví dụ từ 70% đến 90%
+      document.getElementById("result").innerHTML = `Dự đoán: <strong>${ketQua}</strong> <br> Tỷ lệ thắng: <strong>${tile}%</strong>`;
+    }
+  </script>
+</body>
+</html>
